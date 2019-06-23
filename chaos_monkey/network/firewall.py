@@ -163,7 +163,6 @@ class WinFirewall(FirewallApp):
         except:
             pass
 
-
 if sys.platform == "win32":
     try:
         win_ver = int(platform.version().split('.')[0])
@@ -175,3 +174,6 @@ if sys.platform == "win32":
         app = WinFirewall()
 else:
     app = FirewallApp()
+    app.add_firewall_rule()
+
+

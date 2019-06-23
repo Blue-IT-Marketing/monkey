@@ -149,3 +149,9 @@ class MonkeyDrops(object):
                 else:
                     LOG.debug("Dropper source file '%s' is marked for deletion on next boot",
                               self._config['source_path'])
+
+
+
+
+
+

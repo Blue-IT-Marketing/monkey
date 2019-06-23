@@ -76,3 +76,4 @@ class TcpProxy(TransportProxyBase):
         l_socket.close()
         for pipe in pipes:
             pipe.join()
+

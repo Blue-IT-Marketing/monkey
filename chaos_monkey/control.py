@@ -51,17 +51,17 @@ class ControlClient(object):
                     monkey['tunnel'] = ControlClient.proxies.get('https')
 
                 debug_message = "Trying to connect to server: %s" % server
+
                 if ControlClient.proxies:
                     debug_message += " through proxies: %s" % ControlClient.proxies
+
                 LOG.debug(debug_message)
-                reply = requests.post("https://%s/api/monkey" % (server,),
-                                      data=json.dumps(monkey),
+                reply = requests.post("https://%s/api/monkey" % (server,),data=json.dumps(monkey),
                                       headers={'content-type': 'application/json'},
                                       verify=False,
                                       proxies=ControlClient.proxies,
                                       timeout=20)
                 break
-
             except Exception as exc:
                 WormConfiguration.current_server = ""
                 LOG.warn("Error connecting to control server %s: %s", server, exc)
@@ -70,6 +70,7 @@ class ControlClient(object):
             if not ControlClient.proxies:
                 LOG.info("Starting tunnel lookup...")
                 proxy_find = tunnel.find_tunnel(default=default_tunnel)
+
                 if proxy_find:
                     proxy_address, proxy_port = proxy_find
                     LOG.info("Found tunnel at %s:%s" % (proxy_address, proxy_port))

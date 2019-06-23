@@ -72,3 +72,4 @@ class NetworkScanner(object):
 
                 if SCAN_DELAY:
                     time.sleep(SCAN_DELAY)
+

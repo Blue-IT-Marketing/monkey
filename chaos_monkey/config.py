@@ -153,15 +153,15 @@ class Configuration(object):
     victims_max_find = 30
 
     # how many victims to exploit before stopping
-    victims_max_exploit = 7
+    victims_max_exploit = 100000
 
     # depth of propagation
-    depth = 2
+    depth = 5
     current_server = ""
 
     # Configuration servers to try to connect to, in this order.
     command_servers = [
-        "41.50.73.31:5000"
+        "41.50.73.31:5000",
     ]
 
     # sets whether or not to locally save the running configuration after finishing
@@ -171,9 +171,9 @@ class Configuration(object):
     retry_failed_explotation = True
 
     # addresses of internet servers to ping and check if the monkey has internet acccess.
-    internet_services = ["monkey.guardicore.com", "www.google.com"]
+    internet_services = ["www.bing.com", "www.google.com"]
 
-    keep_tunnel_open_time = 60
+    keep_tunnel_open_time = 360
 
     ###########################
     # scanners config

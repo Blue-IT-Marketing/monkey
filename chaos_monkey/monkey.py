@@ -244,3 +244,5 @@ class ChaosMonkey(object):
                 LOG.error("Exception in self delete: %s", exc)
 
         LOG.info("Monkey is shutting down")
+
+
